@@ -24,7 +24,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 8px; */
+    padding: 2px;
     width: 100%;
     margin: auto;
     /* z-index: 10; */
