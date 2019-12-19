@@ -1,0 +1,134 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+   
+}
+*{
+    margin: 0;
+    padding: 0;
+    --themeColor1: rgb(10, 64, 109);
+    --themeColor2: rgb(243, 132, 9);
+}
+body{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+#appWrapper{
+    position: relative;
+    width: 100%;
+}
+.mainHeader{
+    position:sticky;
+    top: 0;
+    background: var(--themeColor1, steelblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 8px; */
+    width: 100%;
+    margin: auto;
+    /* z-index: 10; */
+}
+#masthead{
+    color: var(--themeColor2, steelblue);
+    border: 1px solid rgba(255, 255, 255, 0.705);
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+}
+#masthead:hover{
+    border-color: var(--themeColor2);
+    color: white;
+
+}
+#mainNav{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+#mainNav li{
+    list-style-type: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+#mainNav .active, #mainNav li:hover{
+    color: var(--themeColor2, darkgoldenrod);
+}
+.mainContainer{
+    position: relative;
+    padding: 0 20px;
+    height: 600px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+ #landing, #coreNav{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mainPage{
+    transition: 500ms ease-in-out;
+}
+#landing{
+    
+  
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+}
+
+#coreNav{
+    /* background: rgba(255, 255, 255, 0.349); */
+    background: url("https://images.unsplash.com/photo-1576235789670-28a9c8e950b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80") center no-repeat;
+    flex-direction: column;
+    width: 100%;
+    min-width: 300px;
+    height: 520px;
+    margin: auto;
+    transition: 600ms ease-in-out;
+    cursor: pointer;
+}
+#coreNav:hover{
+   opacity: .9
+}
+#coreNav li span{
+    color: var(--themeColor2);
+}
+#coreNav li{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    height:100px;
+    width: 100px;
+    background: rgba(0, 0, 0, 0.627);
+    list-style-type: none;
+    padding: 8px;
+    font-size: 20px;
+    margin: 5px auto;
+    transition: 300ms ease-in-out;
+    color: white;
+}
+#coreNav li:hover{
+    color:var(--themeColor2);
+    border-color: white;
+    /* transform: scale(1.05); */
+}
+
+footer{
+    text-align: center;
+    padding: 20px 0;
+    opacity: .7;
+    font-size: 13px;
+}
