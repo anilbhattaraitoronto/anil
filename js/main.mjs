@@ -1,4 +1,4 @@
-import { year, getYear } from '/js/functions/getYear.mjs'
+import { getYear } from '/js/functions/getYear.mjs'
 import { navigatePage, navigate } from '/js/pageHandling/navigatePage.mjs'
 
 

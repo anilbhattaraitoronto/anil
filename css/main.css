@@ -60,13 +60,20 @@ body{
 }
 .mainContainer{
     position: relative;
-    padding: 0 20px;
-    height: 600px;
-    overflow: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+}
+.mainPage{
+    position: relative;
+}
+.sectionTitle{
+    text-align: center;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
  #landing, #coreNav{
     position: relative;
@@ -77,19 +84,14 @@ body{
     align-items: center;
     text-align: center;
 }
-.mainPage{
-    transition: 500ms ease-in-out;
-}
-#landing{
-    
-  
+
+#landing{  
     width: 100%;
     max-width: 900px;
     height: 100%;
 }
 
 #coreNav{
-    /* background: rgba(255, 255, 255, 0.349); */
     background: url("https://images.unsplash.com/photo-1576235789670-28a9c8e950b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80") center no-repeat;
     flex-direction: column;
     width: 100%;
