@@ -177,7 +177,7 @@ p{
 
 .sideNavContainer.animatedMenu{
     display: block;
-    left: 5px;
+    left: 0;
     z-index: 10;
     background: white;
 }
