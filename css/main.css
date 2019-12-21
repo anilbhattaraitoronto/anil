@@ -13,6 +13,9 @@ body{
     max-width: 900px;
     margin: auto;
 }
+p{
+    padding-bottom: 12px;
+}
 #appWrapper{
     position: relative;
     width: 100%;
@@ -55,7 +58,7 @@ body{
     text-transform: uppercase;
     font-size: 13px;
 }
-#mainNav .active, #mainNav li:hover{
+#mainNav .active, #mainNav li:hover, .titleLink.active{
     color: var(--themeColor2, darkgoldenrod);
 }
 .mainContainer{
@@ -67,12 +70,36 @@ body{
     position: relative;
 }
 .sectionTitle{
+    position: relative;
     text-align: center;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 10px 0;
+    margin: 5px auto;
 
+}
+.sectionTitle span{
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    transition: 300ms ease-in-out;
+    border: 1px solid transparent;
+    padding: 5px;
+
+}
+.sectionTitle span:hover{
+    color: var(--themeColor1);
+    border-color: var(--themeColor1);
+}
+.subSectionTitle{
+    font-size: 16px;
+}
+.subSectionTitle span{
+    border: 1px solid transparent;
+    transition: 300ms ease-in-out;
+}
+.subSectionTitle span:hover{
+    border-color: var(--themeColor1);
 }
  #landing, #coreNav{
     position: relative;
@@ -131,13 +158,68 @@ body{
     /* transform: scale(1.05); */
 }
 
+/* project and blog pages styles*/
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 5px;
+    padding: 10px;
+}
+.sideNavContainer{
+    display: block;
+    height: auto;
+    /* background: lightgray; */
+    padding: 10px;
+    transition: 700ms ease-in-out;
+}
+
+.sideNavContainer.animatedMenu{
+    display: block;
+    left: 5px;
+    z-index: 10;
+    background: white;
+}
+.itemContainer{
+    height: 100%;
+    padding: 20px;
+    /* background: lightgray; */
+}
+.titleLink{
+    cursor: pointer;
+    color: var(--themeColor1);
+    padding: 8px 0;
+}
+.titleLink:hover{
+    color: var(--themeColor2);
+}
+
+/* footer styles*/
 footer{
     text-align: center;
     padding: 20px 0;
     opacity: .7;
     font-size: 13px;
-     width: 100%;
-    height: 300px;
+    width: 100%;
     margin: 20px auto;
     background:  rgb(232, 235, 238); 
+}
+
+@media only screen and (max-width: 600px){
+    .sectionTitle span{
+        display: inline;
+    }
+    .container{
+        position: relative;
+        grid-template-columns: 1fr;
+        background: lightgray;
+    }
+    .sideNavContainer{
+        /* display: block; */
+        position: absolute;
+        left: -180px;
+        z-index: 12;
+        cursor: pointer;
+        /* background: white; */
+    }
 }

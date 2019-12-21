@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="/cyIcon.png">
     <link rel="stylesheet" href="/css/main.css">
-    <title>CodeYatra</title>
+    <title>CodeYatra | Welcome</title>
 </head>
 <body>
     <section id="appWrapper">
@@ -22,18 +22,33 @@
             <main class="mainPage" id="landing">     
                 <article id="coreItem">
                     <ul id="coreNav">
-                        <li class="mainLink"><span>You Are Here</span></li class="mainLink">
+                        <li class="mainLink"><span>You Are Here</span></li>
                         <li class="mainLink">My Projects</li>
                         <li class="mainLink">Read Blogs</li>
                     </ul>
                 </article>
             </main>
             <main class="mainPage" id="projects">
-                <h2 class="sectionTitle">My Projects</h2></main>
-                <article id="projectContainer"></article>
+                <h2 class="sectionTitle"> <span id = "projectTitleMenu">Titles &#9776;</span> My Projects</h2>
+                <article class="container">
+                   
+                    <section id="projectTitleContainer" class="sideNavContainer">
+                        <h3 class="subSectionTitle">Titles <span> &#9747;</span></h3>
+                        <section id="projectNav" class="sideNav"></section>
+                    </section>
+                    <section id="projectContainer" class="itemContainer"></section>
+                </article class="container">
+            </main>
             <main class="mainPage" id="blogs">
-                <h2 class="sectionTitle">Blogs</h2>
-                <article id="blogContainer"></article>
+                <h2 class="sectionTitle"> <span id="blogTitleMenu"> &#9776;</span> Blogs</h2>
+                <article class="container">
+                   
+                    <section class="sideNavContainer" id="blogTitleContainer">
+                        <h3 class="subSectionTitle">Titles <span> &#9747;</span> </h3>
+                        <section id="blogNav" class="sideNav"></section>
+                    </section>
+                    <section id="blogContainer" class="itemContainer"></section>
+                </article>
             </main>
         </div>
         <footer>
