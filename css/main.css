@@ -19,6 +19,7 @@ p{
 #appWrapper{
     position: relative;
     width: 100%;
+    margin: auto;
 }
 .mainHeader{
     position:sticky;
