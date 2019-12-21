@@ -1,30 +1,36 @@
 "use strict"
 
-export function navigatePage(pageClass, linkClass, activeClass, index = 0) {
-
-    let mainPages = Array.from(document.getElementsByClassName(pageClass))
-    let mainLinks = Array.from(document.getElementsByClassName(linkClass))
-    mainPages.forEach(page => {
-        page.style.display = "none"
+export function displayPage(pageClass, linkClass, activeClass, index = 0) {
+    let pages = Array.from(document.getElementsByClassName(pageClass))
+    let links = Array.from(document.getElementsByClassName(linkClass))
+    pages.forEach(page => {
+        page.style.display = 'none'
     })
-    mainLinks.forEach(link => {
+    links.forEach(link => {
         link.classList.remove(activeClass)
     })
-    mainPages[index].style.display = 'grid'
-    mainLinks[index].classList.add(activeClass)
+    pages[index].style.display = 'block'
+    links[index].classList.add(activeClass)
 }
-export function navigate(navId) {
+
+
+export function switchPages(navId, pageClass) {
     let nav = document.getElementById(navId)
+    let navLinks = Array.from(nav.children)
+    let linkClass = navLinks[0].getAttribute('class')
+
     nav.addEventListener('click', (event) => {
         let targetItem = event.target
-        let targetIndex = Array.from(nav.children).indexOf(targetItem)
-        if (targetIndex !== -1) {
-            return navigatePage('mainPage', 'mainLink', 'active', targetIndex)
+
+        if (targetItem.parentElement === nav) {
+            let targetIndex = navLinks.indexOf(targetItem)
+            navLinks[targetIndex].classList.add('active')
+            displayPage(pageClass, linkClass, 'active', targetIndex)
+
         }
     })
 }
 
-
-
-
+switchPages('mainNav', 'mainPage')
+switchPages('coreNav', 'mainPage')
 
