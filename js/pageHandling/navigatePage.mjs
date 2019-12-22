@@ -34,19 +34,17 @@ export function switchPages(navId, pageClass, linkClass) {
 }
 
 
-export function renderItem(id, posts) {
+export function displayItem(id, posts, postIndex = 0) {
     let itemContainer = document.getElementById(id)
-
-    posts.forEach(item => {
-        let postItem = `
+    let postItem = `
         <article class="item">
-            <p class="itemPostedOn"> ${item.postedOn}</p> 
-            <h4 class="itemTitle">${item.title}</h4>
-            <div class="itemContent">${item.content}</div>
+            <p class="itemPostedOn"> ${posts[postIndex].postedOn}</p> 
+            <h4 class="itemTitle">${posts[postIndex].title}</h4>
+            <div class="itemContent">${posts[postIndex].content}</div>
         </article>
         `
-        itemContainer.innerHTML += postItem
-    })
+    itemContainer.innerHTML = postItem
+
 
 }
 
@@ -56,4 +54,23 @@ export function renderTitles(id, titles) {
         let postTitle = ` <h4 class="titleLink"> ${title} </h4>`
         titleContainer.innerHTML += postTitle
     })
+}
+
+export function iterateItem(navId, id, posts, activeClass) {
+    let nav = document.getElementById(navId)
+    if (nav.children !== null) {
+
+        nav.addEventListener('click', (event) => {
+            Array.from(nav.children).forEach(link => {
+                link.classList.remove(activeClass)
+            })
+            let targetLink = event.target
+            targetLink.classList.add(activeClass)
+            let targetIndex = Array.from(nav.children).indexOf(targetLink)
+            displayItem(id, posts, targetIndex)
+        })
+
+    }
+
+
 }

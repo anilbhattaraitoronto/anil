@@ -7,10 +7,15 @@ export let blogs = [
         `
     },
     {
-        postedOn: "December 21 2021 Saturday",
+        postedOn: "December 21 2019 Saturday",
+        title: "Why Learn Computing",
+        content: `<p>Computers are everywhere.</p>`
+    },
+    {
+        postedOn: "December 21 2019 Saturday",
         title: "My Second Post",
-        Content: `<p> This is my second post</p>`
-    }
+        content: `<p> This is my second post</p>`
+    },
 ]
 
 export let blogTitles = blogs.map(blog => blog.title)

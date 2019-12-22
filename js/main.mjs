@@ -1,6 +1,7 @@
 import { getYear } from '/js/functions/getYear.mjs'
-import { displayPage, switchPages, renderItem, renderTitles } from '/js/pageHandling/navigatePage.mjs'
+import { displayPage, switchPages, displayItem, renderTitles, iterateItem } from '/js/pageHandling/navigatePage.mjs'
 import { blogs, blogTitles } from '/js/data/blogs.mjs'
+import { hideShowSideMenu } from '/js/functions/hideShowSideMenu.mjs'
 
 
 
@@ -10,7 +11,7 @@ function loadApp(mastheadId) {
     masthead.addEventListener('click', (event) => {
         displayPage('mainPage', 'mainLink', 'active', 0)
     })
-    renderItem('blogContainer', blogs)
+    displayItem('blogContainer', blogs, 0)
     renderTitles('blogNav', blogTitles)
 
     displayPage('mainPage', 'mainLink', 'active', 0)
@@ -18,25 +19,17 @@ function loadApp(mastheadId) {
 
     switchPages('mainNav', 'mainPage', 'mainLink')
     switchPages('coreNav', 'mainPage', 'mainLink')
-    switchPages('blogNav', 'item', 'titleLink')
+
+    // switchPages('blogNav', 'item', 'titleLink')
+
+    iterateItem('blogNav', 'blogContainer', blogs, 'active')
 
     hideShowSideMenu('projectTitleMenu', 'projectTitleContainer')
     hideShowSideMenu('blogTitleMenu', 'blogTitleContainer')
 }
 
 
-function hideShowSideMenu(menuId, sideNavId) {
-    let projectTitleMenu = document.getElementById(menuId)
-    let projectTitleContainer = document.getElementById(sideNavId)
 
-    projectTitleMenu.addEventListener('click', () => {
-        projectTitleContainer.classList.toggle('animatedMenu')
-    })
-    projectTitleContainer.addEventListener('click', (e) => {
-        projectTitleContainer.classList.toggle('animatedMenu')
-
-    })
-}
 
 
 
