@@ -45,7 +45,6 @@ export function displayItem(id, posts, postIndex = 0) {
         `
     itemContainer.innerHTML = postItem
 
-
 }
 
 export function renderTitles(id, titles) {
